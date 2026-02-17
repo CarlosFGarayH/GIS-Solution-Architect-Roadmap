@@ -12,6 +12,7 @@ Focusing on **GE Vernova GridOS** & **Smallworld Core Technology**.
 
 ---
 *"Architecture is the will of an epoch translated into space."*
+
 ---
 ## 📓 Weekly Log: Feb 2025 (Week 4)
 ### Research: Smallworld GNM 5.3.5 Deployment Architecture
