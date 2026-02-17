@@ -12,3 +12,14 @@ Focusing on **GE Vernova GridOS** & **Smallworld Core Technology**.
 
 ---
 *"Architecture is the will of an epoch translated into space."*
+---
+## 📓 Weekly Log: Feb 2025 (Week 4)
+### Research: Smallworld GNM 5.3.5 Deployment Architecture
+
+**Key Architect's Note:**
+> "I analyzed the latest GNM deployment guidelines. The strategic shift is clear: Modern GIS solutions are moving away from standalone desktops towards **Kubernetes-based web services** and **VDI infrastructures (AWS/Azure)**. The introduction of the **GIS Adapter Server** as a containerized service is a game-changer for building scalable Java integrations within the **GE Vernova GridOS** ecosystem."
+
+**Tasks Completed:**
+- [x] Documented Core Runtime Components (swmfs, Job Server, GSA).
+- [x] Created Level 2 C4 Diagram for Complete GNM Deployment.
+- [x] Analyzed Kubernetes & GIS Adapter role in modern integrations.
