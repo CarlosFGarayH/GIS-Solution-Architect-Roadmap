@@ -12,6 +12,8 @@
 - **Database:** PostgreSQL Architecture, PostGIS (Spatial indexing, ST_Functions), SQL Optimization.
 - **Java:** Java 17+ Core, Collections, I/O Streams, JDBC/Hibernate Basics.
 - **Architecture:** C4 Model (Level 1 & 2), Data Modeling Patterns.
+- **Core Topics:** ... (add this) ... VMDS Cloud Transition, Block vs. Record Persistence.
+- **Project Goal:** Align "The Data Migrator" with GE Vernova's "Lift & Shift" strategy (VMDS to PostgreSQL).
 
 ### 🚀 Phase 1 Milestone: "The Data Migrator"
 - Build a Java tool to extract network assets from VMDS and replicate them in PostGIS with topology preservation.
