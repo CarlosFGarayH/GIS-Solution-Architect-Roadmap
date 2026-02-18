@@ -16,3 +16,6 @@ GE's decision to use Java for the Datastore access is due to:
 1. **Interoperability:** Native support for PostGIS and SQL.
 2. **RESTful APIs:** Facilitating access to GIS data for Javascript/Typescript applications (GridOS UI).
 3. **Security:** Using standard rights management instead of proprietary SWMFS connections.
+
+## 🏛️ Strategic Justification
+> "Java is the chosen orchestrator because standard SQL databases (PostgreSQL) lack the native ability to manage Smallworld's hierarchical versions (Alternatives) and topological connectivity. By moving the logic to a Java-based SQL Adapter, we achieve cloud scalability while maintaining data integrity."
