@@ -64,3 +64,6 @@ To master the **VMDS to VMDS Cloud** transition by building scalable, record-bas
 
 ---
 *"Architecture is not about making things look good; it's about making the most important technical decisions first to enable future scale."*
+
+## 🚀 Active Projects
+- **[The Data Migrator](https://github.com/CarlosFGarayH/The-Data-Migrator):** Java engine to migrate VMDS data to PostgreSQL. Currently implementing the **SQL Adapter** layer (Phase 1).
