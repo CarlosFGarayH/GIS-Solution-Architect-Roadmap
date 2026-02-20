@@ -22,4 +22,4 @@ To maintain parity with the Smallworld CASE Tool definitions, I have mapped GIS 
 ## 🛠️ Infrastructure Readiness
 - **Database:** `vernova_migration_db` initialized.
 - **Extension:** `postgis` enabled.
-- **DDL Script:** [https://github.com/CarlosFGarayH/The-Data-Migrator/blob/main/infrastructure/sql/init_db.sql]
+- **DDL Script:** [The Data Migrator Infraestructure PostgreSQL](https://github.com/CarlosFGarayH/The-Data-Migrator/blob/main/infrastructure/sql/init_db.sql)
