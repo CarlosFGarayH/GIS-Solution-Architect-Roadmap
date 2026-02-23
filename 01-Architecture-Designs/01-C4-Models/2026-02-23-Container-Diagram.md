@@ -36,4 +36,3 @@ graph LR
 **Next Step (Saturday Lab):** Implement a Magik script to extract field names and types from the `road` collection to feed the Java logic.
 ```
 
----
