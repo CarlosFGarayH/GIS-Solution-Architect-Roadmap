@@ -7,9 +7,13 @@
 - [x] **Week 1 (Feb 16):** Repo Setup & C4 Context.
     - *Tuesday Study:* [CASE Tool Tutorial] Chap 3: Simple road network.
     - *Saturday Lab:* Create "Road & Town" model in Smallworld.
-- [ ] **Week 2 (Feb 23):** Advanced Modeling & Metadata.
-    - *Tuesday Study:* [CASE Tool Reference] Chap 3: Case Entities details.
-    - *Saturday Lab:* Extracting CASE metadata via Magik (Collections & Fields).
+- [x] **Week 2 (Feb 23 - Mar 01): Advanced Modeling & Metadata.**
+    - [ ] Monday: C4 Level 2 (Container Diagram) & Component Boundaries.
+    - [ ] Tuesday: Core Dive - Programmatic Metadata Extraction (Magik).
+    - [ ] Wednesday: Java Metadata API & Reflection Patterns.
+    - [ ] Thursday: Advanced SQL - Spatial Parity & Constraints.
+    - [ ] Friday: ADR 002 - Strategy for Automated Schema Mapping.
+    - [ ] Saturday: Lab - Automated Extraction of 1 Collection Metadata.
 - [ ] **Week 3 (Mar 02):** Java Collections & Mapping Logic.
     - *Tuesday Study:* [CASE Tool Tutorial] Chap 6: Object and field properties.
     - *Saturday Lab:* Build Java Map structures to hold VMDS metadata.
