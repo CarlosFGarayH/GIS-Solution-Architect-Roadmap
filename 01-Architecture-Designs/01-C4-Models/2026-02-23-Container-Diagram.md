@@ -31,3 +31,7 @@ graph LR
 1.  **Magik Metadata Service:** Its responsibility is restricted to reading the CASE Tool definitions (`dd_table`). It should not handle SQL logic.
 2.  **Java Engine (The Orchestrator):** This is the core container. It manages memory and batch processing. By using **JNI (Smallworld Java Interoperability)**, we ensure "Transparent Data Access".
 3.  **PostGIS Landing Zone:** Aligned with **GE Vernova’s GridOS**, this container democratizes GIS data, enabling future consumption by JavaScript/TypeScript web-GIS frameworks.
+
+---
+**Next Step (Saturday Lab):** Implement a Magik script to extract field names and types from the `road` collection to feed the Java logic.
+```
