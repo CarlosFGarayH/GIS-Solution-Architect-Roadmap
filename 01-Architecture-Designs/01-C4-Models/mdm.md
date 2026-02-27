@@ -9,7 +9,7 @@ Este documento describe la arquitectura de red, el flujo de pasos técnicos y lo
 | **$BN** | Bastión | `137.131.177.182` | Windows | Puerta de enlace (Gateway) |
 | **$TS** | Terminal Server | `10.164.97.210` | Windows | Ejecución de aplicación |
 | **$SB** | Samba & DB | `10.164.98.100` | Linux | Binarios, Compilación y Datos |
-| **$SL** | Servidor Licencias | `10.164.65.250` | - | Gestión de tokens de licencia |
+| **$SL** | Servidor Licencias | `10.164.65.250` | Linux | Gestión de tokens de licencia |
 
 ## 2. Flujo de Conexión (Step-by-Step)
 
