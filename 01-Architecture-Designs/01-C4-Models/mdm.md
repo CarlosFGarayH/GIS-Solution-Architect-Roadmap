@@ -6,7 +6,7 @@ Este documento describe la arquitectura de red, el flujo de pasos técnicos y lo
 
 | Sigla | Nombre del Servidor | IP / Host | Sistema Operativo | Función |
 |:---:|:---|:---|:---|:---|
-| **$BN** | Bastión | `137.131.177.182` | Windows | Puerta de enlace (Gateway) |
+| **$BN** | Bastion | `137.131.177.182` | Windows | Puerta de enlace (Gateway) |
 | **$TS** | Terminal Server | `10.164.97.210` | Windows | Ejecución de aplicación |
 | **$SB** | Samba & DB | `10.164.98.100` | Linux | Binarios, Compilación y Datos |
 | **$SL** | Servidor Licencias | `10.164.65.250` | Linux | Gestión de tokens de licencia |
