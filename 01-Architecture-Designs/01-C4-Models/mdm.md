@@ -1,29 +1,35 @@
 # Arquitectura de Acceso a Smallworld
+*Flujo de Conexión y Ejecución*
 
-Este documento describe el flujo de conexión desde el internet público hasta la ejecución de la aplicación Smallworld en la red interna.
-
-## Diagrama C4 Model - Nivel 2 (Contenedores)
+## Diagrama de Infraestructura
 
 ```mermaid
-C4Container
-    title Diagrama de Contenedores - Acceso a Aplicación Smallworld
+C4Context
+    %% No usamos 'title' interno para evitar que se corte arriba
+    
+    Person(user, "Usuario Externo", "Acceso vía RDP")
 
-    Person(user, "Usuario Externo", "Personal con acceso remoto.")
-
-    System_Boundary(dmz, "Zona de Entrada (Public)") {
-        Container(bastion, "Bastion ($BN)", "Windows Server", "IP: 137.131.177.182. Punto de entrada seguro desde internet.")
+    Boundary(dmz, "Zona Pública (Internet)") {
+        System(bn, "Bastión ($BN)", "Windows Server<br/>137.131.177.182")
     }
 
-    System_Boundary(internal_net, "Red Interna") {
-        Container(ts, "Terminal Server ($TS)", "Windows Server", "IP: 10.164.97.210. Servidor de ejecución de aplicaciones.")
-        Container(sb, "Samba & DB ($SB)", "Linux", "IP: 10.164.98.100. Almacena el binario (.exe) y la base de datos.")
-        Container(sl, "Servidor de Licencias ($SL)", "Software Licenser", "IP: 10.164.65.250. Gestiona los tokens de Smallworld.")
+    Boundary(internal, "Red Interna (LAN)") {
+        System(ts, "Terminal Server ($TS)", "Windows Server<br/>10.164.97.210")
+        
+        %% Separamos los sistemas para que las flechas tengan espacio
+        System(sb, "Samba & DB ($SB)", "Linux Server<br/>10.164.98.100")
+        System(sl, "Licencias ($SL)", "Servidor Licencias<br/>10.164.65.250")
     }
 
-    Rel(user, bastion, "1. Inicia sesión RDP", "RDP/3389")
-    Rel(bastion, ts, "2. Salta vía RDP", "RDP/3389")
-    Rel(ts, sb, "3. Accede a ruta de red (SMB) para ejecutar .exe", "SMB/445")
-    Rel(ts, sl, "4. Valida licencia al iniciar el sistema", "FlexLM/TCP")
-    Rel(ts, sb, "5. Conexión de datos", "SQL/Proprietary")
+    %% Relaciones claras y con espacio
+    Rel(user, bn, "1. Inicia RDP")
+    Rel(bn, ts, "2. Salto RDP")
+    
+    %% Unificamos el paso 3 y 5 para evitar que las letras se superpongan
+    Rel_L(ts, sb, "3. Carga .exe / 5. Datos", "SMB & SQL")
+    
+    %% El paso 4 va hacia el otro lado
+    Rel_R(ts, sl, "4. Valida Licencia", "FlexLM")
 
+    %% Ajuste de diseño para dar más ancho
     UpdateLayoutConfig($c4ShapeInRow="2", $c4BoundaryInRow="1")
