@@ -12,12 +12,12 @@ graph TD
     User((Usuario Externo)):::person
 
     subgraph DMZ ["Zona Pública (Internet)"]
-        BN["Bastión ($BN)<br/>Windows Server<br/>137.131.177.182"]:::system
+        BN["Bastión <br/>Windows Server<br/>137.131.177.182"]:::system
     end
 
     subgraph Internal ["Red Interna (LAN)"]
-        TS["Terminal Server ($TS)<br/>Windows Server<br/>10.164.97.210"]:::system
-        SB["Samba & DB ($SB)<br/>Linux Server<br/>10.164.98.100"]:::system
+        TS["Terminal Server <br/>Windows Server<br/>10.164.97.210"]:::system
+        SB["Samba & DB <br/>Linux Server<br/>10.164.98.100"]:::system
         SL["Servidor Licencias ($SL)<br/>IP: 10.164.65.250"]:::system
     end
 
