@@ -1,27 +1,22 @@
 # Core Dive: Programmatic Metadata Discovery (Real Data Trace)
 **Date:** 2026-02-24
-**Target Collection:** `min_road` (Roads)
+**Focus:** Final Metadata Trace for `min_road` Collection.
 
-## 🔍 Metadata Extraction Results
-I successfully executed a Magik discovery script to interogate the `:gis` database. Below is the technical breakdown of the `min_road` collection:
+## 🔍 Discovery Results: Smallworld 5.3.5 Output
+I have successfully executed the `metadata_discovery.magik` script. The trace revealed the following physical structure for the Road assets:
 
-### Field Mapping Analysis
-| Smallworld Field | Magik Core Type | Mandatory? | Architect's Implementation Strategy |
+### Metadata Trace Summary
+| FIELD | CORE TYPE | PHYSICAL STORAGE | MANDATORY |
 | :--- | :--- | :--- | :--- |
-| `min_road_id` | `sys_id` | True | Map to `UUID` in PostgreSQL to preserve GIS pointers. |
-| `name` | `unset` (Primitive) | True | Map to `VARCHAR(n)`. Requires fetching `f.type.size`. |
-| `road_type` | `road_type` | True | **Challenge:** User-defined type. Java must resolve the underlying `storage_class`. |
-| `rwo_id` | `gis_id` | True | Primary link to PostGIS geometry records. |
-| `ds!version` | `ds_vstamp` | True | Map to `TIMESTAMP` or `INTEGER` for version control. |
+| `min_road_id` | `sys_id` | `ds_uint` | True |
+| `name` | `primitive_unset` | `ds_charci` | True |
+| `carriage_type` | `carriage_type` | `ds_uint` | True |
+| `road_type` | `road_type` | `ds_uint` | True |
+| `rwo_id` | `gis_id` | `ds_uint` | True |
+| `ds!version` | `ds_vstamp` | `ds_vstamp` | True |
 
-## 🏛️ Architect's Perspective: The "Unset" Type & Custom Schemas
-During extraction, the `name` field returned an `unset` type name. 
-- **Finding:** This indicates an anonymous primitive type. 
-- **Solution:** The "SQL Adapter" in Java must be programmed to handle `unset` symbols by querying the `.type.storage_class` instead of just the `.type.name`.
+## 🏛️ Architect's Perspective: The Transformation Logic
+Based on this trace, I have established the **Type Mapping Strategy** for the Java SQL Adapter:
 
-### Strategic Alignment with GridOS
-GE Vernova's **VMDS Cloud** roadmap (Slide 29) requires replacing "block persistence" with "record persistence." 
-The presence of `rwo_id` and `ds!version` confirms that our PostgreSQL schema must include these metadata columns to support the **Version Manager** logic within the Java Orchestrator.
-
----
-**Next Step (Wednesday):** Java Metadata API - Implementing a "Type Resolver" to handle the `road_type` and `carriage_type` custom enumerations.
+1. **Numeric Parity:** `ds_uint` fields will be migrated as `BIGINT` or `INTEGER` in PostgreSQL.
+2. **String Handling:** `d
